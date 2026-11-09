@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Petrichor OS</title>
+  <meta name="description" content="Petrichor OS: a from-scratch Unix-like operating system for x86_64, with its own kernel, desktop, web browser and package manager.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="wrap bar-inner">
+      <a class="brand" href="#">Petrichor</a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#screens">Screenshots</a>
+        <a href="#start">Get started</a>
+        <a href="https://github.com/PetrichorFoundation/PetrichorOS">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Petrichor OS</h1>
+      <p class="tag">the smell of rain on dry earth</p>
+      <p class="lede">A Unix-like operating system for x86_64, written from scratch: its own kernel, filesystem,
+        drivers, desktop, web browser and package manager.</p>
+      <div class="buttons">
+        <a class="btn primary" href="https://github.com/PetrichorFoundation/PetrichorOS">View the source</a>
+        <a class="btn" href="#start">Build &amp; run it</a>
+      </div>
+      <img class="shot hero-shot" src="img/desktop.png" alt="The Petrichor desktop with a terminal window, glass panel and dock">
+    </div>
+  </section>
+
+  <section id="features" class="wrap">
+    <h2>What's inside</h2>
+    <div class="grid">
+      <div class="card"><h3>Kernel</h3><p>64-bit, preemptive multitasking, virtual memory with <code>mmap</code>, threads and futexes, shared memory and pipes.</p></div>
+      <div class="card"><h3>Hardware</h3><p>IDE, AHCI, NVMe and virtio disks; Realtek, Intel and virtio network cards; USB keyboard, mouse and tablet; ACPI power.</p></div>
+      <div class="card"><h3>Boots anywhere</h3><p>BIOS and UEFI, from a disk, CD or USB stick, with an installer on the live ISO.</p></div>
+      <div class="card"><h3>Desktop</h3><p>A glassy windowed desktop with a dock, animations, custom wallpapers, a terminal, files, editor, image viewer and settings.</p></div>
+      <div class="card"><h3>Networking</h3><p>TCP/IP with DHCP and DNS, plus HTTPS with certificate checking, built into the system.</p></div>
+      <div class="card"><h3>Web browser</h3><p>HTML5 and CSS via NetSurf's libraries, TrueType fonts, images, JavaScript and downloads. Installed as a package.</p></div>
+      <div class="card"><h3>Packages</h3><p><code>ppm</code> installs and upgrades software from the <a href="https://github.com/PetrichorFoundation/Petrichor-Packages">package repository</a>.</p></div>
+      <div class="card"><h3>Developer friendly</h3><p>Write programs in C or C++ with a small libc, pthreads and a graphics library.</p></div>
+    </div>
+  </section>
+
+  <section id="screens" class="wrap">
+    <h2>Screenshots</h2>
+    <div class="shots">
+      <figure><img class="shot" src="img/browser.png" alt="The Petrichor web browser showing a Wikipedia article with its right-click menu"><figcaption>The web browser</figcaption></figure>
+      <figure><img class="shot" src="img/wallpaper.png" alt="The Petrichor desktop with a picture as its wallpaper"><figcaption>Your own wallpaper</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="start" class="wrap">
+    <h2>Get started</h2>
+    <p>You need <code>clang</code>, <code>ld.lld</code> and <code>qemu-system-x86_64</code>.</p>
+<pre><code>git clone https://github.com/PetrichorFoundation/PetrichorOS
+cd PetrichorOS
+make          # builds the kernel, disk image and ISO
+make run      # boots it in QEMU</code></pre>
+    <p>Then install the browser from inside Petrichor:</p>
+<pre><code>ppm update
+ppm install browser</code></pre>
+    <p><code>build/petrichor.iso</code> boots on real hardware too: write it to a USB stick, or burn it to a CD.</p>
+  </section>
+
+  <footer class="wrap foot">
+    <p>Petrichor OS &middot; <a href="https://github.com/PetrichorFoundation/PetrichorOS">GitHub</a> &middot;
+      <a href="https://github.com/PetrichorFoundation/Petrichor-Packages">Packages</a></p>
+  </footer>
+</body>
+</html>
